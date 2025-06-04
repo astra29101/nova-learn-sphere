@@ -115,6 +115,14 @@ const AdminDashboard = () => {
                   </Link>
                 </Button>
                 <Button className="w-full justify-between" variant="outline" asChild>
+                  <Link to="/admin/add-educator">
+                    <span className="flex items-center">
+                      <Users className="w-4 h-4 mr-2" />
+                      Add New Educator
+                    </span>
+                  </Link>
+                </Button>
+                <Button className="w-full justify-between" variant="outline" asChild>
                   <Link to="/admin/courses">
                     <span className="flex items-center">
                       <BookOpen className="w-4 h-4 mr-2" />
