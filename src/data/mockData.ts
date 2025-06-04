@@ -1,4 +1,5 @@
 
+
 export interface Course {
   id: string;
   title: string;
@@ -29,7 +30,7 @@ export interface Module {
 export interface Video {
   id: string;
   title: string;
-  youtubeUrl: string;
+  url: string;
   duration: string;
   moduleId: string;
   order: number;
@@ -72,7 +73,7 @@ export const mockCourses: Course[] = [
           {
             id: 'v1',
             title: 'What is React?',
-            youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
+            url: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '10:30',
             moduleId: 'm1',
             order: 1
@@ -80,7 +81,7 @@ export const mockCourses: Course[] = [
           {
             id: 'v2',
             title: 'Setting up Development Environment',
-            youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
+            url: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '15:20',
             moduleId: 'm1',
             order: 2
@@ -88,7 +89,7 @@ export const mockCourses: Course[] = [
           {
             id: 'v3',
             title: 'Creating Your First Component',
-            youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
+            url: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '12:45',
             moduleId: 'm1',
             order: 3
@@ -105,7 +106,7 @@ export const mockCourses: Course[] = [
           {
             id: 'v4',
             title: 'Understanding React Hooks',
-            youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
+            url: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '18:30',
             moduleId: 'm2',
             order: 1
@@ -113,7 +114,7 @@ export const mockCourses: Course[] = [
           {
             id: 'v5',
             title: 'Context API Deep Dive',
-            youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
+            url: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '22:15',
             moduleId: 'm2',
             order: 2
@@ -148,7 +149,7 @@ export const mockCourses: Course[] = [
           {
             id: 'v6',
             title: 'Arrow Functions and Template Literals',
-            youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
+            url: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '14:20',
             moduleId: 'm3',
             order: 1
@@ -156,7 +157,7 @@ export const mockCourses: Course[] = [
           {
             id: 'v7',
             title: 'Destructuring and Spread Operator',
-            youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
+            url: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '16:45',
             moduleId: 'm3',
             order: 2
@@ -191,7 +192,7 @@ export const mockCourses: Course[] = [
           {
             id: 'v8',
             title: 'Color Theory Basics',
-            youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
+            url: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '20:30',
             moduleId: 'm4',
             order: 1
