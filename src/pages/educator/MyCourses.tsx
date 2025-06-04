@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -12,10 +13,23 @@ const MyCourses = () => {
   const { user } = useAuth();
   const { toast } = useToast();
   
-  // Filter courses for current educator (mock)
-  const [myCourses, setMyCourses] = useState(
-    mockCourses.filter(course => course.instructor === user?.name)
-  );
+  console.log('Current user:', user);
+  console.log('All courses:', mockCourses);
+  
+  // Filter courses for current educator - improved filtering logic
+  const [myCourses, setMyCourses] = useState(() => {
+    if (!user) return [];
+    
+    // Try multiple filtering approaches to ensure we get the courses
+    const filteredCourses = mockCourses.filter(course => 
+      course.instructor === user.name || 
+      course.instructorId === user.id ||
+      (user.role === 'educator' && course.instructor.toLowerCase().includes(user.name?.toLowerCase() || ''))
+    );
+    
+    console.log('Filtered courses for user:', filteredCourses);
+    return filteredCourses;
+  });
 
   const handleDeleteCourse = (courseId: string) => {
     setMyCourses(myCourses.filter(course => course.id !== courseId));
@@ -32,6 +46,12 @@ const MyCourses = () => {
           <div>
             <h1 className="text-3xl font-bold text-gray-900 mb-4">My Courses</h1>
             <p className="text-gray-600">Manage your published courses</p>
+            {/* Debug info */}
+            {user && (
+              <p className="text-sm text-gray-500 mt-2">
+                Logged in as: {user.name} ({user.role}) - Found {myCourses.length} courses
+              </p>
+            )}
           </div>
           <Button asChild>
             <Link to="/educator/add-course">
