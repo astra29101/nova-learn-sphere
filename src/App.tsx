@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,12 +11,10 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Courses from "./pages/Courses";
-import StudentDashboard from "./pages/student/Dashboard";
-import AdminDashboard from "./pages/admin/Dashboard";
-import EducatorDashboard from "./pages/educator/Dashboard";
 import NotFound from "./pages/NotFound";
 
 // Student Pages
+import StudentDashboard from "./pages/student/Dashboard";
 import MyLearning from "./pages/student/MyLearning";
 import CourseContent from "./pages/student/CourseContent";
 import CoursePlayer from "./pages/student/CoursePlayer";
@@ -23,25 +22,23 @@ import Cart from "./pages/student/Cart";
 import StudentProfile from "./pages/student/Profile";
 
 // Admin Pages
+import AdminDashboard from "./pages/admin/Dashboard";
 import StudentAnalytics from "./pages/admin/StudentAnalytics";
 import StudentDetail from "./pages/admin/StudentDetail";
 import EducatorAnalytics from "./pages/admin/EducatorAnalytics";
 import EducatorDetail from "./pages/admin/EducatorDetail";
 import CourseAnalytics from "./pages/admin/CourseAnalytics";
 import CourseDetail from "./pages/admin/CourseDetail";
+import AdminProfile from "./pages/admin/Profile";
 
 // Educator Pages
+import EducatorDashboard from "./pages/educator/Dashboard";
 import AddCourse from "./pages/educator/AddCourse";
 import MyCourses from "./pages/educator/MyCourses";
 import AddModule from "./pages/educator/AddModule";
 import AddVideo from "./pages/educator/AddVideo";
 import EducatorCourseDetail from "./pages/educator/CourseDetail";
 import EducatorStudentAnalytics from "./pages/educator/StudentAnalytics";
-
-// Admin Profile Page
-import AdminProfile from "./pages/admin/Profile";
-
-// Educator Profile Page
 import EducatorProfile from "./pages/educator/Profile";
 
 const queryClient = new QueryClient();
