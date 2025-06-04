@@ -1,17 +1,19 @@
-
 export interface Course {
   id: string;
   title: string;
   description: string;
   instructor: string;
   instructorId: string;
-  price: number;
   image: string;
+  price: number;
+  duration: string;
+  level: string;
+  category: string;
   rating: number;
   students: number;
-  duration: string;
-  modules: Module[];
   approved: boolean;
+  modules: Module[];
+  createdAt: string;
 }
 
 export interface Module {
@@ -52,7 +54,10 @@ export const mockCourses: Course[] = [
     rating: 4.8,
     students: 1247,
     duration: '12 hours',
+    level: 'Intermediate',
+    category: 'Web Development',
     approved: true,
+    createdAt: '2024-01-01',
     modules: [
       {
         id: 'm1',
@@ -118,7 +123,10 @@ export const mockCourses: Course[] = [
     rating: 4.9,
     students: 856,
     duration: '8 hours',
+    level: 'Beginner',
+    category: 'Programming',
     approved: true,
+    createdAt: '2024-02-01',
     modules: [
       {
         id: 'm3',
@@ -155,7 +163,10 @@ export const mockCourses: Course[] = [
     rating: 4.7,
     students: 643,
     duration: '15 hours',
+    level: 'Beginner',
+    category: 'Design',
     approved: false,
+    createdAt: '2024-03-01',
     modules: [
       {
         id: 'm4',
