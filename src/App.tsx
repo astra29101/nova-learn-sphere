@@ -11,6 +11,7 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Courses from "./pages/Courses";
+import CourseDetails from "./pages/CourseDetails";
 import NotFound from "./pages/NotFound";
 
 // Student Pages
@@ -38,6 +39,7 @@ import MyCourses from "./pages/educator/MyCourses";
 import AddModule from "./pages/educator/AddModule";
 import AddVideo from "./pages/educator/AddVideo";
 import EducatorCourseDetail from "./pages/educator/CourseDetail";
+import ManageCourse from "./pages/educator/ManageCourse";
 import EducatorStudentAnalytics from "./pages/educator/StudentAnalytics";
 import EducatorProfile from "./pages/educator/Profile";
 
@@ -94,6 +96,7 @@ const AppContent = () => {
           {/* Public Routes */}
           <Route path="/" element={<Landing />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/course-details/:courseId" element={<CourseDetails />} />
           
           {/* Auth Routes */}
           <Route path="/login" element={
@@ -200,6 +203,11 @@ const AppContent = () => {
           <Route path="/educator/courses/:courseId" element={
             <ProtectedRoute allowedRoles={['educator']}>
               <EducatorCourseDetail />
+            </ProtectedRoute>
+          } />
+          <Route path="/educator/courses/:courseId/manage" element={
+            <ProtectedRoute allowedRoles={['educator']}>
+              <ManageCourse />
             </ProtectedRoute>
           } />
           <Route path="/educator/courses/:courseId/add-module" element={

@@ -139,9 +139,9 @@ const MyCourses = () => {
                       </Link>
                     </Button>
                     <Button variant="outline" size="sm" className="flex-1" asChild>
-                      <Link to={`/educator/courses/${course.id}/edit`}>
+                      <Link to={`/educator/courses/${course.id}/manage`}>
                         <Edit className="w-4 h-4 mr-1" />
-                        Edit
+                        Manage
                       </Link>
                     </Button>
                     <Button 

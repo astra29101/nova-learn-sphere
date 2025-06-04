@@ -1,10 +1,11 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Star, Users, Clock } from 'lucide-react';
-import { Course } from '@/data/mockData';
+import { Course } from '@/api/demoApi';
 
 interface CourseCardProps {
   course: Course;
@@ -21,8 +22,17 @@ const CourseCard: React.FC<CourseCardProps> = ({
   enrolled = false,
   showActions = true 
 }) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/course-details/${course.id}`);
+  };
+
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+    <Card 
+      className="overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
+      onClick={handleCardClick}
+    >
       <div className="relative">
         <img 
           src={course.image} 
@@ -73,7 +83,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
           </div>
           
           {showActions && (
-            <div className="flex space-x-2">
+            <div className="flex space-x-2" onClick={(e) => e.stopPropagation()}>
               {enrolled ? (
                 <Button className="flex-1" variant="outline">
                   Continue Learning
