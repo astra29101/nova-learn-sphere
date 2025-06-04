@@ -1,3 +1,4 @@
+
 export interface Course {
   id: string;
   title: string;
@@ -22,6 +23,7 @@ export interface Module {
   description: string;
   videos: Video[];
   courseId: string;
+  order: number;
 }
 
 export interface Video {
@@ -30,6 +32,7 @@ export interface Video {
   youtubeUrl: string;
   duration: string;
   moduleId: string;
+  order: number;
 }
 
 export interface Enrollment {
@@ -64,27 +67,31 @@ export const mockCourses: Course[] = [
         title: 'Introduction to React',
         description: 'Getting started with React fundamentals',
         courseId: '1',
+        order: 1,
         videos: [
           {
             id: 'v1',
             title: 'What is React?',
             youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '10:30',
-            moduleId: 'm1'
+            moduleId: 'm1',
+            order: 1
           },
           {
             id: 'v2',
             title: 'Setting up Development Environment',
             youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '15:20',
-            moduleId: 'm1'
+            moduleId: 'm1',
+            order: 2
           },
           {
             id: 'v3',
             title: 'Creating Your First Component',
             youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '12:45',
-            moduleId: 'm1'
+            moduleId: 'm1',
+            order: 3
           }
         ]
       },
@@ -93,20 +100,23 @@ export const mockCourses: Course[] = [
         title: 'Advanced React Concepts',
         description: 'Learn hooks, context, and advanced patterns',
         courseId: '1',
+        order: 2,
         videos: [
           {
             id: 'v4',
             title: 'Understanding React Hooks',
             youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '18:30',
-            moduleId: 'm2'
+            moduleId: 'm2',
+            order: 1
           },
           {
             id: 'v5',
             title: 'Context API Deep Dive',
             youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '22:15',
-            moduleId: 'm2'
+            moduleId: 'm2',
+            order: 2
           }
         ]
       }
@@ -133,20 +143,23 @@ export const mockCourses: Course[] = [
         title: 'ES6 Fundamentals',
         description: 'Learn the core ES6 features',
         courseId: '2',
+        order: 1,
         videos: [
           {
             id: 'v6',
             title: 'Arrow Functions and Template Literals',
             youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '14:20',
-            moduleId: 'm3'
+            moduleId: 'm3',
+            order: 1
           },
           {
             id: 'v7',
             title: 'Destructuring and Spread Operator',
             youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '16:45',
-            moduleId: 'm3'
+            moduleId: 'm3',
+            order: 2
           }
         ]
       }
@@ -173,13 +186,15 @@ export const mockCourses: Course[] = [
         title: 'Design Principles',
         description: 'Understanding fundamental design concepts',
         courseId: '3',
+        order: 1,
         videos: [
           {
             id: 'v8',
             title: 'Color Theory Basics',
             youtubeUrl: 'https://www.youtube.com/watch?v=dGcsHMXbSOA',
             duration: '20:30',
-            moduleId: 'm4'
+            moduleId: 'm4',
+            order: 1
           }
         ]
       }
